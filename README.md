@@ -1,3 +1,10 @@
+# BIG IMPORTANT NOTE
+
+This branch fixes the problems caused by adding the namespaces property
+to the builtin process module. See https://github.com/facebook/jest/issues/12650
+for details.
+
+
 [![NPM](https://nodei.co/npm/cls-hooked.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cls-hooked/)
 
 [![Build Status](https://travis-ci.org/Jeff-Lewis/cls-hooked.svg?branch=master)](https://travis-ci.org/Jeff-Lewis/cls-hooked)

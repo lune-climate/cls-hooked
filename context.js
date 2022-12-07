@@ -274,7 +274,8 @@ Namespace.prototype.fromException = function fromException(exception) {
 };
 
 function getNamespace(name) {
-  return process.namespaces[name];
+  throw new Error('Global namespace support removed')
+  // return process.namespaces[name];
 }
 
 function createNamespace(name) {
@@ -427,20 +428,25 @@ function createNamespace(name) {
 
   hook.enable();
 
-  process.namespaces[name] = namespace;
+  // process.namespaces[name] = namespace;
   return namespace;
 }
 
 function destroyNamespace(name) {
+  throw new Error('Global namespace support removed')
+  /*
   let namespace = getNamespace(name);
 
   assert.ok(namespace, 'can\'t delete nonexistent namespace! "' + name + '"');
   assert.ok(namespace.id, 'don\'t assign to process.namespaces directly! ' + util.inspect(namespace));
 
   process.namespaces[name] = null;
+  */
 }
 
 function reset() {
+  throw new Error('Global namespace support removed')
+  /*
   // must unregister async listeners
   if (process.namespaces) {
     Object.keys(process.namespaces).forEach(function (name) {
@@ -448,9 +454,10 @@ function reset() {
     });
   }
   process.namespaces = Object.create(null);
+  */
 }
 
-process.namespaces = process.namespaces || {};
+// process.namespaces = process.namespaces || {};
 
 //const fs = require('fs');
 function debug2(...args) {
